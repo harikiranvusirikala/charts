@@ -12,6 +12,24 @@
       (function () {
         // Function to extract symbols from URL query parameters
         function getSymbolsFromURL() {
+          const params = new URLSearchParams(window.location.search);
+          const symbolsParam = params.get("symbols");
+
+          if (symbolsParam) {
+            // Split by comma and create chart objects
+            return symbolsParam.split(",").map(function (symbol, index) {
+              const trimmedSymbol = symbol.trim();
+              // Extract crypto name from symbol (e.g., "BINANCE:BTCUSD|5D" -> "BTC")
+              const match = trimmedSymbol.match(/:([\w]+)USD/);
+              const cryptoName = match ? match[1] : "Crypto";
+
+              return {
+                symbol: trimmedSymbol,
+                label: cryptoName,
+                noTimeScale: index !== 0, // First chart shows time scale
+              };
+            });
+          }
 
           // Default configuration if no URL parameters
           return [

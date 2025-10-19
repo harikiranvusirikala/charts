@@ -20,15 +20,47 @@ The charts track the following cryptocurrencies:
 - **SOL** (Solana) - BINANCE:SOLUSD
 - **SUI** (Sui) - BINANCE:SUIUSD
 - **APT** (Aptos) - BINANCE:APTUSD
+## 🎯 Custom Symbols via URL
+
+You can now customize which cryptocurrencies to display by passing symbols through URL parameters:
+
+### Usage
+
+Add a `symbols` query parameter with comma-separated trading pairs:
+
+```
+d.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D,COINBASE:SOLUSD|1D
+```
+
+### Examples
+
+**Day View with custom symbols:**
+```
+https://harikiranvusirikala.github.io/charts/crypto/d.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D
+```
+
+**5-Day View with custom symbols:**
+```
+https://harikiranvusirikala.github.io/charts/crypto/5d.html?symbols=BINANCE:BTCUSD|5D,COINBASE:APTUSD|5D
+```
+
+### Supported Formats
+
+- **Binance:** `BINANCE:XXXUSD|1D` or `BINANCE:XXXUSD|5D`
+- **Coinbase:** `COINBASE:XXXUSD|1D` or `COINBASE:XXXUSD|5D`
+- **Other exchanges:** Follow TradingView's symbol format
+
+**Note:** Use `|1D` for day view and `|5D` for 5-day view to match the page's timeframe.
 
 ## ✨ Features
 
-- 📈 Real-time price data from Binance
+- 📈 Real-time price data from Binance and Coinbase
 - 🎨 Dark theme UI with consistent styling
 - 📱 Mobile-responsive design
 - 📊 Volume indicators
 - 🔄 Auto-updating charts
 - ⚡ Multiple timeframe options
+- 🔗 **Dynamic symbol loading via URL parameters**
 
 ## 🛠️ Technology
 
