@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Day View - Crypto Charts</title>
+  </head>
+  <body style="margin: 0">
+    <div id="pageZoom" class="page-zoom-wrapper"></div>
+
+    <script>
+      (function () {
+        // Function to extract symbols from URL query parameters
+        function getSymbolsFromURL() {
+
+          // Default configuration if no URL parameters
+          return [
+            {
+              symbol: "BINANCE:BTCUSD|5D",
+              label: "BTC (Bitcoin)",
+              noTimeScale: false,
+            },
+            {
+              symbol: "BINANCE:ETHUSD|5D",
+              label: "ETH (Ethereum)",
+              noTimeScale: true,
+            },
+            {
+              symbol: "BINANCE:SOLUSD|5D",
+              label: "SOL (Solana)",
+              noTimeScale: true,
+            },
+            {
+              symbol: "BINANCE:SUIUSD|5D",
+              label: "SUI (Sui)",
+              noTimeScale: true,
+            },
+            {
+              symbol: "BINANCE:APTUSD|5D",
+              label: "APT (Aptos)",
+              noTimeScale: true,
+            },
+          ];
+        }
+
+        // Get configuration from URL or use defaults
+        const cryptoCharts = getSymbolsFromURL();
+
+        // Common widget configuration
+        const baseConfig = {
+          lineWidth: 2,
+          lineType: 0,
+          chartType: "line",
+          showVolume: true,
+          fontColor: "rgb(106, 109, 120)",
+          gridLineColor: "rgba(242, 242, 242, 0.06)",
+          volumeUpColor: "rgba(34, 171, 148, 0.5)",
+          volumeDownColor: "rgba(247, 82, 95, 0.5)",
+          backgroundColor: "#0F0F0F",
+          widgetFontColor: "#DBDBDB",
+          upColor: "#22ab94",
+          downColor: "#f7525f",
+          borderUpColor: "#22ab94",
+          borderDownColor: "#f7525f",
+          wickUpColor: "#22ab94",
+          wickDownColor: "#f7525f",
+          colorTheme: "dark",
+          isTransparent: false,
+          locale: "en",
+          chartOnly: true,
+          scalePosition: "right",
+          scaleMode: "Normal",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+          valuesTracking: "1",
+          changeMode: "percent-only",
+          dateRanges: ["5d|5"],
+          fontSize: "10",
+          headerFontSize: "small",
+          autosize: true,
+          width: "100%",
+          height: "200",
+          hideDateRanges: true,
+        };
+
+        const wrapper = document.getElementById("pageZoom");
+
+        // Generate widgets for each crypto
+        cryptoCharts.forEach(function (crypto) {
+          // Create container div
+          const container = document.createElement("div");
+          container.className = "chart-container";
+
+          // Create label div
+          const label = document.createElement("div");
+          label.className = "chart-label";
+          label.textContent = crypto.label;
+          container.appendChild(label);
+
+          // Create script element for TradingView widget
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src =
+            "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+          script.async = true;
+
+          // Merge base config with crypto-specific settings
+          const config = Object.assign({}, baseConfig, {
+            symbols: [[crypto.symbol]],
+            noTimeScale: crypto.noTimeScale,
+          });
+
+          script.textContent = JSON.stringify(config, null, 2);
+          container.appendChild(script);
+
+          wrapper.appendChild(container);
+        });
+
+      })();
+    </script>
+  </body>
+</html>
