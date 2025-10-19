@@ -17,7 +17,7 @@ View the live charts here: **[https://harikiranvusirikala.github.io/charts/](htt
 
 ### Day View
 ![Day View Screenshot](assets/day-view.png)
-*Real-time cryptocurrency charts with 1-day interval showing BTC, ETH, SOL, SUI, and APT*
+*Real-time cryptocurrency charts with 1-min interval showing BTC, ETH, SOL, SUI, and APT*
 
 ## 📊 Featured Cryptocurrencies
 
@@ -38,19 +38,19 @@ You can now customize which cryptocurrencies to display by passing symbols throu
 Add a `symbols` query parameter with comma-separated trading pairs:
 
 ```
-d.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D,COINBASE:SOLUSD|1D
+day.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D,COINBASE:SOLUSD|1D
 ```
 
 ### Examples
 
 **Day View with custom symbols:**
 ```
-https://harikiranvusirikala.github.io/charts/crypto/d.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D
+https://harikiranvusirikala.github.io/charts/crypto/day.html?symbols=BINANCE:BTCUSD|1D,BINANCE:ETHUSD|1D
 ```
 
 **5-Day View with custom symbols:**
 ```
-https://harikiranvusirikala.github.io/charts/crypto/5d.html?symbols=BINANCE:BTCUSD|5D,COINBASE:APTUSD|5D
+https://harikiranvusirikala.github.io/charts/crypto/5day.html?symbols=BINANCE:BTCUSD|5D,COINBASE:APTUSD|5D
 ```
 
 ### Supported Formats
@@ -89,4 +89,4 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ---
 
-*Last updated: October 18, 2025*
+*Last updated: October 19, 2025*
