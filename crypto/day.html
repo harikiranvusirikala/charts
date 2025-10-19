@@ -4,6 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day View - Crypto Charts</title>
+    <style>
+      /* Wrapper used to scale the entire page content to ~88.5% visual zoom */
+      html,
+      body {
+        height: 100%;
+      }
+      .page-zoom-wrapper {
+        transform-origin: 0 0; /* scale from top-left */
+        width: calc(100% / 0.885); /* keep layout width coherent when scaled */
+      }
+      /* Ensure body background remains full width after scaling */
+      body {
+        background: #0f0f0f;
+        margin: 0;
+      }
+      .chart-container {
+        position: relative;
+      }
+      .chart-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(26, 26, 26, 0.85);
+        color: #dbdbdb;
+        padding: 6px 12px;
+        font-family: -apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto,
+          Ubuntu, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 4px;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+      }
+    </style>
   </head>
   <body style="margin: 0">
     <div id="pageZoom" class="page-zoom-wrapper"></div>
