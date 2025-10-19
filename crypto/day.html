@@ -134,6 +134,27 @@
           wrapper.appendChild(container);
         });
 
+        // Apply zoom scaling
+        var scale = 0.885;
+        if (!wrapper) return;
+
+        // Primary method: CSS transform (works across modern browsers)
+        wrapper.style.transform = "scale(" + scale + ")";
+
+        // Keep the page height to viewport height so scrolling matches visual size
+        wrapper.style.height = 100 / scale + "vh";
+
+        // Fallback: use CSS zoom for browsers that support it (Chromium, IE)
+        try {
+          if (typeof wrapper.style.zoom !== "undefined") {
+            wrapper.style.zoom = scale;
+          }
+        } catch (e) {
+          // ignore
+        }
+
+        // Adjust body scroll position on load so viewport shows top-left as expected
+        window.scrollTo(0, 0);
       })();
     </script>
   </body>
