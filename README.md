@@ -1,5 +1,7 @@
 # Charts
 
+## Cryptocurrency Trading Charts
+
 A collection of real-time cryptocurrency trading charts powered by TradingView widgets, deployed on GitHub Pages.
 
 ## 🚀 Live Demo
@@ -8,18 +10,25 @@ View the live charts here: **[https://harikiranvusirikala.github.io/charts/](htt
 
 ### Available Views
 
-- **[Daily View](https://harikiranvusirikala.github.io/charts/crypto/1.html)** - Multiple timeframes (1D, 1M, 3M, 12M, 60M, All)
-- **[5-Day View](https://harikiranvusirikala.github.io/charts/crypto/5.html)** - Focused 5-day chart view
+- **[Day View](https://harikiranvusirikala.github.io/charts/crypto/day.html)** - 1-day interval charts
+- **[5-Day View](https://harikiranvusirikala.github.io/charts/crypto/5day.html)** - 5-day interval charts
+
+## 📸 Screenshots
+
+### Day View
+![Day View Screenshot](assets/day-view.png)
+*Real-time cryptocurrency charts with 1-day interval showing BTC, ETH, SOL, SUI, and APT*
 
 ## 📊 Featured Cryptocurrencies
 
-The charts track the following cryptocurrencies:
+Default charts track the following cryptocurrencies:
 
 - **BTC** (Bitcoin) - BINANCE:BTCUSD
 - **ETH** (Ethereum) - BINANCE:ETHUSD
 - **SOL** (Solana) - BINANCE:SOLUSD
-- **SUI** (Sui) - BINANCE:SUIUSD
-- **APT** (Aptos) - BINANCE:APTUSD
+- **SUI** (Sui) - COINBASE:SUIUSD
+- **APT** (Aptos) - COINBASE:APTUSD
+
 ## 🎯 Custom Symbols via URL
 
 You can now customize which cryptocurrencies to display by passing symbols through URL parameters:
@@ -59,8 +68,10 @@ https://harikiranvusirikala.github.io/charts/crypto/5d.html?symbols=BINANCE:BTCU
 - 📱 Mobile-responsive design
 - 📊 Volume indicators
 - 🔄 Auto-updating charts
-- ⚡ Multiple timeframe options
+- ⚡ Multiple timeframe options (1D, 5D)
 - 🔗 **Dynamic symbol loading via URL parameters**
+- 🏷️ Automatic label extraction from symbols
+- 🎯 Configurable chart views without code changes
 
 ## 🛠️ Technology
 
@@ -74,7 +85,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 👤 Author
 
-**Hari Kiran Vusirikala**
+**[Hari Kiran Vusirikala](https://linkedin.com/in/hari-kiran-vusirikala/)**
 
 ---
 
